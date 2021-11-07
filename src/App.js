@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
+
+class App extends React.Component {
+  constructor() {
+    super() 
+    this.state = {
+      unreadMessage: [
+        // "call your mom!",
+        // "New span email.All links are definitely safe to click"
+      ]
+    }
+  }
+
+
+ render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       {/* {this.state.unreadMessage.length > 0 ? <h3>You have {this.state.unreadMessage.length} unread Message</h3> :
+       null
+       } */}
+         {this.state.unreadMessage.length > 0 && <h3>You have {this.state.unreadMessage.length} unread Message</h3>}
     </div>
   );
-}
+ }
+} 
+
+
 
 export default App;
